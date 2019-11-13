@@ -1,7 +1,7 @@
 var myMap;
 var canvas;
 var myLoc;
-var mappa = new Mappa("Leaflet"); //new instance of the mappa using the leaflet map provider
+var mappa = new Mappa("Mapbox", "pk.eyJ1IjoicGlsYXJzdWEiLCJhIjoiY2syd2R5bDI3MDB4djNib21ucWtzdDJxayJ9.wddqYyIeGJ72LJMqS2eEWA"); //new instance of the mappa using the leaflet map provider
 
 var homeLat = -34.5817137
 var homeLon = -58.4685251
@@ -10,7 +10,8 @@ var options = {
   lat: homeLat,
   lng: homeLon,
   zoom: 2.5,
-  style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+  studio:true,
+  style: "mapbox://styles/pilarsua/ck2wukvsi1ydb1cmnrg25vhei",
 }
 
 function preload() {
@@ -60,7 +61,7 @@ function draw() {
   textFont("Arial");
   fill("grey");
   noStroke();
-  text(family + Math.round(distance) + 'Km away of my family, but technology reduces that distance into 0km', width/8 , height/3);
+  text(family + Math.round(distance) + 'Km away of my family, but technology reduces that distance into 0km', (width/8)-40 , height/8);
   pop();
 
 }
